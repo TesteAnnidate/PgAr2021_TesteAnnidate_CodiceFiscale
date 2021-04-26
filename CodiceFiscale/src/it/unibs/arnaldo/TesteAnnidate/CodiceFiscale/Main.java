@@ -8,8 +8,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		
 		ArrayList<Persona> listaPersone = new ArrayList<Persona>();
 		ArrayList<CodiceFiscale> listaCodici = new ArrayList<CodiceFiscale>();
+		
+		
 	}
 
 }
