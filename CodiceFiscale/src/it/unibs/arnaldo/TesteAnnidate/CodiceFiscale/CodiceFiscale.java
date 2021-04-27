@@ -2,13 +2,13 @@ package it.unibs.arnaldo.TesteAnnidate.CodiceFiscale;
 
 public class CodiceFiscale {
 	
-	private String codice;
+	private StringBuffer codice;
 
-	public String getCodice() {
+	public StringBuffer getCodice() {
 		return codice;
 	}
 
-	public void setCodice(String codice) {
+	public void setCodice(StringBuffer codice) {
 		this.codice = codice;
 	}
 	
