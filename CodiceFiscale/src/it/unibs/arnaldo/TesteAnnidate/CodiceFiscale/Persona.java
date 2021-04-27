@@ -13,7 +13,7 @@ public class Persona {
 		CodiceFiscale c = new CodiceFiscale();
 		StringBuffer cf = new StringBuffer();
 		// vari append
-		c.setCodice(cf);
+		//c.setCodice(cf);
 		return c;
 	}
 
