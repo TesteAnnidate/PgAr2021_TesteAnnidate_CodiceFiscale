@@ -7,12 +7,12 @@ public class CodiceFiscale {
 	private static final int ULTIMA_CIFRA_ANNO = 3;
 	private static final int LUNGHEZZA_CODICE = 16;
 
-	private StringBuffer codiceCognome;
-	private StringBuffer codiceNome;
-	private StringBuffer codiceAnno;
+	private StringBuffer codiceCognome = new StringBuffer();
+	private StringBuffer codiceNome = new StringBuffer();
+	private StringBuffer codiceAnno = new StringBuffer();
 	private char codiceMese;
-	private StringBuffer codiceGiornoESesso;
-	private StringBuffer codiceComune;
+	private StringBuffer codiceGiornoESesso = new StringBuffer();
+	private StringBuffer codiceComune = new StringBuffer();
 	private char carattereDiControllo;
 
 	// Meotodo che ritorna il codice fiscale intero
@@ -39,23 +39,41 @@ public class CodiceFiscale {
 		generaCarattereDiControllo();
 
 	}
+
 	
-	// Costruttore che data un input una Stringa genera un oggetto di tipo CodiceFiscale
-	public CodiceFiscale(String codice) {
-		for(int i = 0; i < codice.length(); i++) {
-			if(i < 3)
+	
+	public CodiceFiscale() {
+		super();
+	}
+
+	public CodiceFiscale(CodiceFiscale cf) {
+		super();
+		cf.codiceCognome = codiceCognome;
+		cf.codiceNome = codiceNome;
+		cf.codiceAnno = codiceAnno;
+		cf.codiceMese = codiceMese;
+		cf.codiceGiornoESesso = codiceGiornoESesso;
+		cf.codiceComune = codiceComune;
+		cf.carattereDiControllo = carattereDiControllo;
+	}
+
+	// Costruttore che data un input una Stringa genera un oggetto di tipo
+	// CodiceFiscale
+	public CodiceFiscale (String codice) {
+		for (int i = 0; i < codice.length(); i++) {
+			if (i < 3)
 				codiceCognome.append(codice.charAt(i));
-			else if(i >= 3 && i > 6)
+			else if (i >= 3 && i > 6)
 				codiceNome.append(codice.charAt(i));
-			else if(i >= 6 && i < 8)
+			else if (i >= 6 && i < 8)
 				codiceAnno.append(codice.charAt(i));
-			else if(i == 8)
+			else if (i == 8)
 				codiceMese = codice.charAt(i);
-			else if(i >= 9 && i < 11)
+			else if (i >= 9 && i < 11)
 				codiceGiornoESesso.append(codice.charAt(i));
-			else if(i >= 11 && 1 < 15)
+			else if (i >= 11 && 1 < 15)
 				codiceComune.append(codice.charAt(i));
-			else if(i == 0)
+			else if (i == 0)
 				carattereDiControllo = codice.charAt(i);
 		}
 	}
@@ -100,8 +118,6 @@ public class CodiceFiscale {
 		return true;
 	}
 
-	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -116,7 +132,8 @@ public class CodiceFiscale {
 		return result;
 	}
 
-	// Metodo equals per verificare la presenza di un codice all'interno di una lista
+	// Metodo equals per verificare la presenza di un codice all'interno di una
+	// lista
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
