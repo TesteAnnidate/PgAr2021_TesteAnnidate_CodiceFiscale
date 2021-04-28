@@ -1,9 +1,8 @@
 package it.unibs.arnaldo.TesteAnnidate.CodiceFiscale;
 
 public class CodiceFiscale {
-<<<<<<< HEAD
 
-	private static final String CODICE_NON_VALIDO = "Codice non valido!";
+	// private static final String CODICE_NON_VALIDO = "Codice non valido!";
 	private static final int PENULTIMA_CIFRA_ANNO = 2;
 	private static final int ULTIMA_CIFRA_ANNO = 3;
 	private static final int LUNGHEZZA_CODICE = 16;
@@ -39,17 +38,6 @@ public class CodiceFiscale {
 		generaCodiceComune(p);
 		generaCarattereDiControllo();
 
-=======
-	
-	private StringBuffer codice;
-
-	public StringBuffer getCodice() {
-		return codice;
-	}
-
-	public void setCodice(StringBuffer codice) {
-		this.codice = codice;
->>>>>>> 6792e8ef56875070b5559ae5593b2b22d90bc132
 	}
 	
 	// Costruttore che data un input una Stringa genera un oggetto di tipo CodiceFiscale
@@ -112,8 +100,6 @@ public class CodiceFiscale {
 		return true;
 	}
 
-	
-<<<<<<< HEAD
 	
 	
 	@Override
@@ -680,9 +666,5 @@ public class CodiceFiscale {
 	public void setCarattereDiControllo(char carattereDiControllo) {
 		this.carattereDiControllo = carattereDiControllo;
 	}
-
-=======
->>>>>>> 6792e8ef56875070b5559ae5593b2b22d90bc132
-	// metodo per determinare la presenza di un codice in un array
 
 }

@@ -3,7 +3,6 @@ package it.unibs.arnaldo.TesteAnnidate.CodiceFiscale;
 public class Data {
 
 	private int giorno;
-<<<<<<< HEAD
 	private Mesi mese;
 	private String anno;
 	
@@ -76,18 +75,9 @@ public class Data {
 	public void setAnno(String anno) {
 		this.anno = anno;
 	}
-	
-	
-	
-=======
-	private int mese;
-	private int anno;
-
-
 
 	//COSTRUTTORE CHE RICEVE UNA STRINGA AAAA-MM-GG
 	public Data(String text) {
 		//DA IMPLEMENTARE
 	}
->>>>>>> 6792e8ef56875070b5559ae5593b2b22d90bc132
 }
