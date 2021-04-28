@@ -58,7 +58,7 @@ public class Input {
                         persona.setSesso(reader.getText().trim().charAt(0));      //imposta il sesso come un char
                     }
                     else if(start_element_name.equals("comune_nascita")){
-                        persona.setLuogoDiNascita(reader.getText());
+                       // persona.setLuogoDiNascita(reader.getText());
                     }
                     else if(start_element_name.equals("data_nascita")){
                         persona.setDataDiNascita(new Data(reader.getText()));   //COSRTRUTTORE DA IMPLEMENTARE
@@ -115,7 +115,7 @@ public class Input {
                     if (start_element_name.equals("nome")) {   //se il tag di apertura (evento prima) è = a nome
                         comune.setNome_comune(reader.getText());    //allora setto l'attributo nome della persona
                     } else if (start_element_name.equals("codice")) { //setto il cognome
-                        comune.setCodice_comune(reader.getText());
+                       // comune.setCodice_comune(reader.getText());
                     }
 
                     break;
