@@ -1,5 +1,7 @@
 package it.unibs.arnaldo.TesteAnnidate.CodiceFiscale;
 
+import java.text.SimpleDateFormat;
+
 public class Data {
 
 	private int giorno;
