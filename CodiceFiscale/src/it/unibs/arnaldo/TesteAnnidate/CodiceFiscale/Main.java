@@ -48,9 +48,9 @@ public class Main {
 			lista_codici_da_persone.add(codice_generato);
 		}
 
-		/*for(Persona persona: lista_persone){
+		for(Persona persona: lista_persone){
 			System.out.println(persona.getCf().codiceFiscaleIntero());
-		}*/
+		}
 
 
 	}

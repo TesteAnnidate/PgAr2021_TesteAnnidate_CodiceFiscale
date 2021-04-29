@@ -128,20 +128,18 @@ public class Data {
 		this.anno = anno;
 	}
 
-	public Data() {
-		super();
-	}
+
 
 	// COSTRUTTORE CHE RICEVE UNA STRINGA AAAA-MM-GG
 	public Data(String text) {
-		this.anno = text.substring(0, 3);
+		this.anno = text.substring(0, 4);     //ho messo il 4 perchè l'endIndex è escluso
 		if(text.charAt(5) == '0')
-			this.mese = Data.ritornaMese(Integer.parseInt(text.substring(5, 5)));
+			this.mese = Data.ritornaMese(Integer.parseInt(text.substring(6, 7)));
 		else
-			this.mese = Data.ritornaMese(Integer.parseInt(text.substring(5, 6)));
+			this.mese = Data.ritornaMese(Integer.parseInt(text.substring(5, 7)));
 		if(text.charAt(8) == '0')
-			this.giorno = Integer.parseInt(text.substring(8, 8));
-		else
 			this.giorno = Integer.parseInt(text.substring(8, 9));
+		else
+			this.giorno = Integer.parseInt(text.substring(8, 10));
 	}
 }

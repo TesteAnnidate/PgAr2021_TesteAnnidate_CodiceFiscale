@@ -55,7 +55,7 @@ public class Input {
                         //il codice del comune viene impostato dopo
                     } else if (reader.getLocalName().equals("data_nascita")) {
                         reader.next();
-                        persona.setDataDiNascita(new Data(reader.getText()));   //COSRTRUTTORE DA IMPLEMENTARE
+                        persona.setDataDiNascita(new Data(reader.getText()));
                     }
                     break;
 
