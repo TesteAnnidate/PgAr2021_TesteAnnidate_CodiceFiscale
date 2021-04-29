@@ -40,8 +40,6 @@ public class CodiceFiscale {
 
 	}
 
-	
-	
 	public CodiceFiscale() {
 		super();
 	}
@@ -59,7 +57,7 @@ public class CodiceFiscale {
 
 	// Costruttore che data un input una Stringa genera un oggetto di tipo
 	// CodiceFiscale
-	public CodiceFiscale (String codice) {
+	public CodiceFiscale(String codice) {
 		for (int i = 0; i < codice.length(); i++) {
 			if (i < 3)
 				codiceCognome.append(codice.charAt(i));
@@ -615,9 +613,10 @@ public class CodiceFiscale {
 						|| p.getCognome().charAt(i) == 'U' || contatore < 3) {
 					codiceCognome.append(p.getCognome().charAt(i));
 					contatore++;
-					if (contatore == 3)
-						break;
+
 				}
+				if (contatore == 3)
+					break;
 			}
 			while (contatore < 3) {
 				codiceCognome.append('X');
