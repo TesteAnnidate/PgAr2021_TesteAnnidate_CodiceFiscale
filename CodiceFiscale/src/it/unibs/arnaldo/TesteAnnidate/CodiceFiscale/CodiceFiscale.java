@@ -63,7 +63,7 @@ public class CodiceFiscale {
 		for (int i = 0; i < codice.length(); i++) {
 			if (i < 3)
 				codiceCognome.append(codice.charAt(i));
-			else if (i >= 3 && i > 6)
+			else if (i >= 3 && i < 6)
 				codiceNome.append(codice.charAt(i));
 			else if (i >= 6 && i < 8)
 				codiceAnno.append(codice.charAt(i));
@@ -71,9 +71,9 @@ public class CodiceFiscale {
 				codiceMese = codice.charAt(i);
 			else if (i >= 9 && i < 11)
 				codiceGiornoESesso.append(codice.charAt(i));
-			else if (i >= 11 && 1 < 15)
+			else if (i >= 11 && i < 15)
 				codiceComune.append(codice.charAt(i));
-			else if (i == 0)
+			else if (i == 15)
 				carattereDiControllo = codice.charAt(i);
 		}
 	}

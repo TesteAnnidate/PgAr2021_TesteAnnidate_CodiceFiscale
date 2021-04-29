@@ -9,6 +9,7 @@ public class Persona {
 	private Comune luogoDiNascita; // oppure una classe Comuni
 	private CodiceFiscale cf;
 
+
 	// Getters e getters
 	public String getNome() {
 		return nome;
