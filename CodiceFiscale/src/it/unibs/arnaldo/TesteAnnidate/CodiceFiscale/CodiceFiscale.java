@@ -2,6 +2,7 @@ package it.unibs.arnaldo.TesteAnnidate.CodiceFiscale;
 
 public class CodiceFiscale {
 
+	private static final int QUARTA_CONSONANTE = 4;
 	// private static final String CODICE_NON_VALIDO = "Codice non valido!";
 	private static final int PENULTIMA_CIFRA_ANNO = 2;
 	private static final int ULTIMA_CIFRA_ANNO = 3;
@@ -548,34 +549,33 @@ public class CodiceFiscale {
 	}
 
 	public void generaCodiceNome(Persona p) {
-		int contatore = 0;
 		int consonanti = 0;
 		for (int i = 0; i < p.getNome().length(); i++) {
 			if (p.getNome().charAt(i) != 'A' && p.getNome().charAt(i) != 'E' && p.getNome().charAt(i) != 'I'
-					&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U' && contatore < 3)
+					&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U')
 				consonanti++;
 		}
 		if (consonanti <= 3) {
 			for (int i = 0; i < p.getNome().length(); i++) {
 				if (p.getNome().charAt(i) != 'A' && p.getNome().charAt(i) != 'E' && p.getNome().charAt(i) != 'I'
-						&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U' && contatore < 3) {
+						&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U') {
 					codiceNome.append(p.getNome().charAt(i));
-					contatore++;
 				}
+				if (codiceNome.length() == 3)
+					break;
 			}
-			if (contatore < 3) {
+			if (codiceNome.length() < 3) {
 				for (int i = 0; i < p.getNome().length(); i++) {
 					if (p.getNome().charAt(i) == 'A' || p.getNome().charAt(i) == 'E' || p.getNome().charAt(i) == 'I'
-							|| p.getNome().charAt(i) == 'O' || p.getNome().charAt(i) == 'U' || contatore < 3) {
+							|| p.getNome().charAt(i) == 'O' || p.getNome().charAt(i) == 'U') {
 						codiceNome.append(p.getCognome().charAt(i));
-						contatore++;
-						if (contatore == 3)
-							break;
+
 					}
+					if (codiceNome.length() == 3)
+						break;
 				}
-				while (contatore < 3) {
+				while (codiceNome.length() < 3) {
 					codiceNome.append('X');
-					contatore++;
 				}
 			}
 		}
@@ -583,13 +583,13 @@ public class CodiceFiscale {
 			int cont = 0;
 			for (int i = 0; i < p.getNome().length(); i++) {
 				if (p.getNome().charAt(i) != 'A' && p.getNome().charAt(i) != 'E' && p.getNome().charAt(i) != 'I'
-						&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U' && contatore < 3) {
+						&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U') {
 					cont++;
-					if (cont == 3)
-						continue;
-					codiceNome.append(p.getNome().charAt(i));
-
+					if (cont != 3)
+						codiceNome.append(p.getNome().charAt(i));
 				}
+				if (codiceNome.length() == 3)
+					break;
 			}
 
 		}
@@ -597,30 +597,27 @@ public class CodiceFiscale {
 
 	// Metodo che genera il codice del Cognome
 	public void generaCodiceCognome(Persona p) {
-		int contatore = 0;
 		for (int i = 0; i < p.getCognome().length(); i++) {
 			if (p.getCognome().charAt(i) != 'A' && p.getCognome().charAt(i) != 'E' && p.getCognome().charAt(i) != 'I'
-					&& p.getCognome().charAt(i) != 'O' && p.getCognome().charAt(i) != 'U' && contatore < 3) {
+					&& p.getCognome().charAt(i) != 'O' && p.getCognome().charAt(i) != 'U') {
 				codiceCognome.append(p.getCognome().charAt(i));
-				contatore++;
 			}
-
+			if (codiceCognome.length() == 3)
+				break;
 		}
-		if (contatore < 3) {
+		if (codiceCognome.length() < 3) {
 			for (int i = 0; i < p.getCognome().length(); i++) {
 				if (p.getCognome().charAt(i) == 'A' || p.getCognome().charAt(i) == 'E'
 						|| p.getCognome().charAt(i) == 'I' || p.getCognome().charAt(i) == 'O'
-						|| p.getCognome().charAt(i) == 'U' || contatore < 3) {
+						|| p.getCognome().charAt(i) == 'U') {
 					codiceCognome.append(p.getCognome().charAt(i));
-					contatore++;
 
 				}
-				if (contatore == 3)
+				if (codiceCognome.length() == 3)
 					break;
 			}
-			while (contatore < 3) {
+			while (codiceCognome.length() < 3) {
 				codiceCognome.append('X');
-				contatore++;
 			}
 		}
 	}

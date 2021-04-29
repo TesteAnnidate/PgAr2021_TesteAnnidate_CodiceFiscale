@@ -1,6 +1,9 @@
 package it.unibs.arnaldo.TesteAnnidate.CodiceFiscale;
 
 import javax.xml.stream.XMLStreamException;
+
+import it.unibs.arnaldo.TesteAnnidate.CodiceFiscale.Data.Mesi;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -52,6 +55,8 @@ public class Main {
 			System.out.println(persona.getCf().codiceFiscaleIntero());
 		}
 
+		
+		
 
 	}
 

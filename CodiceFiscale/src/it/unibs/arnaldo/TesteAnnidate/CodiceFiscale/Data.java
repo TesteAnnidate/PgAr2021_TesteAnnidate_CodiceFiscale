@@ -8,6 +8,19 @@ public class Data {
 	private Mesi mese;
 	private String anno;
 
+	// Metodo che ritorna una Stringa del tipo AAAA-MM-GG
+	public String ritornaStringaData() {
+		StringBuffer d = new StringBuffer();
+		d.append(anno);
+		d.append("-");
+		if(Data.ritornaNumeroMese(mese) < 10)
+			d.append(0);
+		d.append(Data.ritornaNumeroMese(mese));
+		d.append("-");
+		d.append(giorno);
+		return d.toString();
+	}
+
 	// Metodo che ritorna il carattere associato al mese
 	public char ritornaCarattereMese() {
 		char carattereMese = 0;
@@ -47,6 +60,49 @@ public class Data {
 			break;
 		case DICEMBRE:
 			carattereMese = 'T';
+			break;
+		}
+		return carattereMese;
+	}
+
+	public static int ritornaNumeroMese(Mesi m) {
+		int carattereMese = 0;
+		switch (m) {
+		case GENNAIO:
+			carattereMese = 1;
+			break;
+		case FEBBRAIO:
+			carattereMese = 2;
+			break;
+		case MARZO:
+			carattereMese = 3;
+			break;
+		case APRILE:
+			carattereMese = 4;
+			break;
+		case MAGGIO:
+			carattereMese = 5;
+			break;
+		case GIUGNO:
+			carattereMese = 6;
+			break;
+		case LUGLIO:
+			carattereMese = 7;
+			break;
+		case AGOSTO:
+			carattereMese = 8;
+			break;
+		case SETTEMBRE:
+			carattereMese = 9;
+			break;
+		case OTTOBRE:
+			carattereMese = 10;
+			break;
+		case NOVEMBRE:
+			carattereMese = 11;
+			break;
+		case DICEMBRE:
+			carattereMese = 12;
 			break;
 		}
 		return carattereMese;
@@ -128,6 +184,11 @@ public class Data {
 		this.anno = anno;
 	}
 
+	// Costruttore classico
+	public Data() {
+		super();
+	}
+
 	// COSTRUTTORE CHE RICEVE UNA STRINGA AAAA-MM-GG
 	public Data(String text) {
 		this.anno = text.substring(0, 4); // ho messo il 4 perchè l'endIndex è escluso
@@ -140,4 +201,5 @@ public class Data {
 		else
 			this.giorno = Integer.parseInt(text.substring(8, 10));
 	}
+
 }
