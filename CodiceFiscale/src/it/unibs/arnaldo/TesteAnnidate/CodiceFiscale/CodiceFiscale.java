@@ -78,7 +78,7 @@ public class CodiceFiscale {
 	}
 
 	// Metodo che verifica la correttezza di un codice fiscale
-	public boolean isCorret(CodiceFiscale cf) {
+	public static boolean isCorret(CodiceFiscale cf) {
 		// il codice deve avere lunghezza 16
 		if (cf.codiceFiscaleIntero().length() != LUNGHEZZA_CODICE)
 			return false;
