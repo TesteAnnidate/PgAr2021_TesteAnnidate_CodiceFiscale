@@ -544,8 +544,8 @@ public class CodiceFiscale {
 	}
 
 	public void generaCodiceAnno(Persona p) {
-		codiceAnno.append(p.getDataDiNascita().getAnno().charAt(ULTIMA_CIFRA_ANNO));
 		codiceAnno.append(p.getDataDiNascita().getAnno().charAt(PENULTIMA_CIFRA_ANNO));
+		codiceAnno.append(p.getDataDiNascita().getAnno().charAt(ULTIMA_CIFRA_ANNO));
 	}
 
 	public void generaCodiceNome(Persona p) {
@@ -585,7 +585,7 @@ public class CodiceFiscale {
 				if (p.getNome().charAt(i) != 'A' && p.getNome().charAt(i) != 'E' && p.getNome().charAt(i) != 'I'
 						&& p.getNome().charAt(i) != 'O' && p.getNome().charAt(i) != 'U') {
 					cont++;
-					if (cont != 3)
+					if (cont != 2)
 						codiceNome.append(p.getNome().charAt(i));
 				}
 				if (codiceNome.length() == 3)
