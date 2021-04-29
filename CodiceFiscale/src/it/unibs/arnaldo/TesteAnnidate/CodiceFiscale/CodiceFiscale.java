@@ -187,9 +187,9 @@ public class CodiceFiscale {
 		StringBuffer dispari = new StringBuffer();
 		for (int i = 1; i <= codiceParziale.length(); i++) {
 			if (i % 2 == 0)
-				pari.append(codiceParziale.charAt(i));
+				pari.append(codiceParziale.charAt(i - 1));
 			else
-				dispari.append(codiceParziale.charAt(i));
+				dispari.append(codiceParziale.charAt(i - 1));
 		}
 		int valoreTot = tabellaPari(pari) + tabellaDispari(dispari);
 		int resto = valoreTot % 26;
