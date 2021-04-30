@@ -17,6 +17,8 @@ public class Data {
 			d.append(0);
 		d.append(Data.ritornaNumeroMese(mese));
 		d.append("-");
+		if(giorno < 10)
+			d.append(0);
 		d.append(giorno);
 		return d.toString();
 	}
@@ -197,7 +199,7 @@ public class Data {
 		else
 			this.mese = Data.ritornaMese(Integer.parseInt(text.substring(5, 7)));
 		if (text.charAt(8) == '0')
-			this.giorno = Integer.parseInt(text.substring(8, 9));
+			this.giorno = Integer.parseInt(text.substring(9, 10));
 		else
 			this.giorno = Integer.parseInt(text.substring(8, 10));
 	}
