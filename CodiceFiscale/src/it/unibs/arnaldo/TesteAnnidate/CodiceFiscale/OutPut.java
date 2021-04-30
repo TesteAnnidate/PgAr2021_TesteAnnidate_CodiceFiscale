@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class OutPut {
     //metodo statico che crea l'xml finale
-
     public static void creaXml(ArrayList<Persona> lista_persone, ArrayList<CodiceFiscale>lista_codici) throws XMLStreamException {
         String file_name = "src/XMLFiles/codicePersone.xml";
 
