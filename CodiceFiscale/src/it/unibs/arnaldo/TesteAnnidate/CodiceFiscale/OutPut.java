@@ -11,8 +11,6 @@ public class OutPut {
 
     public static void creaXml(ArrayList<Persona> lista_persone, ArrayList<CodiceFiscale>lista_codici) throws XMLStreamException {
         String file_name = "src/XMLFiles/codicePersone.xml";
-        ArrayList<CodiceFiscale> codici_assenti = new ArrayList<>();
-
 
         //inizializzazione variabili per la scrittura
         XMLOutputFactory xmlof = null;
@@ -32,22 +30,28 @@ public class OutPut {
 
                 writer.writeStartElement("persona");
                 writer.writeAttribute("id", Integer.toString(lista_persone.indexOf(persona)));
+                //scrittura nome
                 writer.writeStartElement("nome");
                 writer.writeCharacters(persona.getNome());
                 writer.writeEndElement();                       //chiude nome
+                //scrittura cognome
                 writer.writeStartElement("cognome");
                 writer.writeCharacters(persona.getCognome());
                 writer.writeEndElement();                       //chiude cognome
+                //scrittura sesso
                 writer.writeStartElement("sesso");
                 writer.writeCharacters(String.valueOf(persona.getSesso()));
                 writer.writeEndElement();                                       //chiude sesso
+                //scritttura comune
                 writer.writeStartElement("comune_nascita");
                 writer.writeCharacters(persona.getLuogoDiNascita().getNome_comune());
                 writer.writeEndElement();                                               //chiude comune
+                //scrittura data di nascita
                 writer.writeStartElement("data_nascita");
                 writer.writeCharacters(persona.getDataDiNascita().ritornaStringaData());
                 writer.writeEndElement();                                                   //chiude data
 
+                //scrittura del codice fiscale SE presente fra quelli di codiciFiscali.xml
                 writer.writeStartElement("codice_fiscale");
                 if(lista_codici.contains(persona.getCf())) {
                     writer.writeCharacters(persona.getCf().codiceFiscaleIntero());
@@ -59,13 +63,14 @@ public class OutPut {
              }
             writer.writeEndElement(); //chiusura tag persone
 
-            ArrayList<CodiceFiscale> codici_persone = new ArrayList<>();
+            //array contenente i codici di tutte le persone lette da inputPersone.xml
+            ArrayList<CodiceFiscale> codici_persone = new ArrayList<CodiceFiscale>();
             for(Persona persona: lista_persone) {
                 codici_persone.add(persona.getCf());
             }
 
-            ArrayList<CodiceFiscale> codici_invalidi = new ArrayList<>();
-            ArrayList<CodiceFiscale> codici_spaiati = new ArrayList<>();
+            ArrayList<CodiceFiscale> codici_invalidi = new ArrayList<CodiceFiscale>();
+            ArrayList<CodiceFiscale> codici_spaiati = new ArrayList<CodiceFiscale>();
 
             for(CodiceFiscale codiceF: lista_codici) {     //se il codice (fra quelli letti) è sbagliato lo si aggiunge
                 if (!(CodiceFiscale.isCorret(codiceF)))      //al nuovo array
@@ -73,10 +78,11 @@ public class OutPut {
             }
 
             for(CodiceFiscale codice_dato: lista_codici) {     //se il codice fra quelli dati non corrisponde a nessuna
-                if(!(codici_persone.contains(codice_dato)))      //allora lo mette nell'array degli spaiati
+                if(!(codici_persone.contains(codice_dato)))    //persona allora lo mette nell'array degli spaiati
                     codici_spaiati.add(codice_dato);
             }
 
+            //scrittura codici invalidi
             writer.writeStartElement("codici");
             writer.writeStartElement("invalidi");
             writer.writeAttribute("numero", Integer.toString(codici_invalidi.size()));
@@ -87,6 +93,7 @@ public class OutPut {
             }
             writer.writeEndElement(); //chiusura tag invalidi
 
+            //scrittura codici spaiati
             writer.writeStartElement("spaiati");
             writer.writeAttribute("numero", Integer.toString(codici_spaiati.size()));
             for(CodiceFiscale codiceF: codici_spaiati){

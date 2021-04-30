@@ -51,9 +51,10 @@ public class Main {
 			System.out.println(persona.getCf().codiceFiscaleIntero());
 		}*/
 
-		
+		System.out.println("Creazione xml...");
 		//creazione file di output
 		OutPut.creaXml(lista_persone, lista_codici);
+		System.out.println("XML creato!!");
 	}
 
 }

@@ -92,21 +92,24 @@ public class CodiceFiscale {
 				return false;
 		// i caratteri 7 e 8 devono essere numeri
 		for (int i = 0; i < cf.getCodiceAnno().length(); i++)
-			if (cf.getCodiceAnno().charAt(i) < '0' || cf.getCodiceCognome().charAt(i) > '9')
+			if (cf.getCodiceAnno().charAt(i) < '0' || cf.getCodiceAnno().charAt(i) > '9')
 				return false;
 		// il carattere 9 deve essere una lettera compresa tra A e T
 		if (cf.getCodiceMese() < 'A' || cf.getCodiceMese() > 'T')
 			return false;
 		// il carattere 10 deve essere compreso tra 0 e 7
-		if (cf.getCodiceAnno().charAt(0) < '0' || cf.getCodiceCognome().charAt(0) > '7')
+		if (cf.getCodiceGiornoESesso().charAt(0) < '0' || cf.getCodiceGiornoESesso().charAt(0) > '7')
 			return false;
 		// il carattere 11 deve essere un numero
-		if (cf.getCodiceAnno().charAt(1) < '0' || cf.getCodiceCognome().charAt(1) > '9')
+		if (cf.getCodiceGiornoESesso().charAt(1) < '0' || cf.getCodiceGiornoESesso().charAt(1) > '9')
 			return false;
 		for (int i = 0; i < cf.getCodiceComune().length(); i++) {
 			// il carattere 12 deve essere una lettera
-			if (i == 0 && cf.getCodiceComune().charAt(i) < 'A' || cf.getCodiceComune().charAt(i) > 'Z')
-				return false;
+			if (i == 0){
+				if(cf.getCodiceComune().charAt(i) < 'A' || cf.getCodiceComune().charAt(i) > 'Z')
+					return false;
+			}
+
 			// i caratteri 13 14 15 devono essere dei numeri
 			else if (cf.getCodiceComune().charAt(i) < '0' || cf.getCodiceComune().charAt(i) > '9')
 				return false;
@@ -142,7 +145,8 @@ public class CodiceFiscale {
 		if (getClass() != obj.getClass())
 			return false;
 		CodiceFiscale other = (CodiceFiscale) obj;
-		if (carattereDiControllo != other.carattereDiControllo)
+		return this.codiceFiscaleIntero().equals(other.codiceFiscaleIntero());
+		/*if (carattereDiControllo != other.carattereDiControllo)
 			return false;
 		if (codiceAnno == null) {
 			if (other.codiceAnno != null)
@@ -171,7 +175,7 @@ public class CodiceFiscale {
 				return false;
 		} else if (!codiceNome.equals(other.codiceNome))
 			return false;
-		return true;
+		return true;*/
 	}
 
 	public void generaCarattereDiControllo() {

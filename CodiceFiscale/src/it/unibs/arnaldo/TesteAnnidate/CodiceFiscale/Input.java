@@ -60,8 +60,9 @@ public class Input {
                     break;
 
                 case XMLStreamConstants.END_ELEMENT:
-                    if(reader.getLocalName().equals("persona"))
-                        lista_persone.add(persona);
+                    if(reader.getLocalName().equals("persona"))    //controllo se il carattere del sesso è giusto
+                         lista_persone.add(persona);
+
                     break;
 
             default: break;
