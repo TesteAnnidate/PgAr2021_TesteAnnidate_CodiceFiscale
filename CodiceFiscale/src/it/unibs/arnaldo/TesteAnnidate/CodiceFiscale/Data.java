@@ -197,7 +197,7 @@ public class Data {
 		else
 			this.mese = Data.ritornaMese(Integer.parseInt(text.substring(5, 7)));
 		if (text.charAt(8) == '0')
-			this.giorno = Integer.parseInt(text.substring(8, 9));
+			this.giorno = Integer.parseInt(text.substring(9, 10));
 		else
 			this.giorno = Integer.parseInt(text.substring(8, 10));
 	}
