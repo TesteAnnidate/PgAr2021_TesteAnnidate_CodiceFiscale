@@ -5,10 +5,9 @@ public class Test {
 	public static void main(String[] args) {
 
 
-		/*Comune l = new Comune("ABBAMO");
+		Comune l = new Comune("ABBAMO");
 
-		
-		Comune l = new Comune("VALLE LONGA");
+	
 
 		l.setCodice("A123");
 		Data d = new Data();
@@ -16,8 +15,8 @@ public class Test {
 		d.setGiorno(2);
 		d.setMese(Data.Mesi.AGOSTO);
 		Persona p = new Persona();
-		p.setNome("LUIGI");
-		p.setCognome("GAMBA");
+		p.setNome("CUASA CUCU");
+		p.setCognome("PODLDL DIDID");
 		p.setDataDiNascita(d);
 		p.setLuogoDiNascita(l);
 		p.setSesso('F');
@@ -27,13 +26,13 @@ public class Test {
 		CodiceFiscale c = new CodiceFiscale(p);
 		System.out.println(c.codiceFiscaleIntero());
 
-		System.out.println(c.getCodiceNome());*/
+		System.out.println(c.getCodiceNome());
 
 		if(CodiceFiscale.isCorret(new CodiceFiscale("PSILMT01H14B157M"))){
 			System.out.println("gisuto");
 		}else System.out.println("schifo");
 
-		
+		/*
 		/*Comune _l = new Comune("AISI");
 
 		System.out.println(c.getCodiceNome());

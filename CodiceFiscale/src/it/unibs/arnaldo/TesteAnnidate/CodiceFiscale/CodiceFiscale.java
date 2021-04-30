@@ -194,127 +194,129 @@ public class CodiceFiscale {
 			else
 				dispari.append(codiceParziale.charAt(i - 1));
 		}
-		int valoreTot = tabellaPari(pari) + tabellaDispari(dispari);
+		int valoreTot = tabellaDispari(dispari) + tabellaPari(pari);
 		int resto = valoreTot % 26;
-		tabellaCarattereControllo(resto);
+		carattereDiControllo = tabellaCarattereControllo(resto);
 	}
 
-	public void tabellaCarattereControllo(int resto) {
+	public char tabellaCarattereControllo(int resto) {
+		char carattere = ' ';
 		switch (resto) {
 		case 0:
-			carattereDiControllo = 'A';
+			carattere = 'A';
 			break;
 		case 1:
-			carattereDiControllo = 'B';
+			carattere = 'B';
 			break;
 		case 2:
-			carattereDiControllo = 'C';
+			carattere = 'C';
 			break;
 		case 3:
-			carattereDiControllo = 'D';
+			carattere = 'D';
 			break;
 		case 4:
-			carattereDiControllo = 'E';
+			carattere = 'E';
 			break;
 		case 5:
-			carattereDiControllo = 'F';
+			carattere = 'F';
 			break;
 		case 6:
-			carattereDiControllo = 'G';
+			carattere = 'G';
 			break;
 		case 7:
-			carattereDiControllo = 'H';
+			carattere = 'H';
 			break;
 		case 8:
-			carattereDiControllo = 'I';
+			carattere = 'I';
 			break;
 		case 9:
-			carattereDiControllo = 'J';
+			carattere = 'J';
 			break;
 		case 10:
-			carattereDiControllo = 'K';
+			carattere = 'K';
 			break;
 		case 11:
-			carattereDiControllo = 'L';
+			carattere = 'L';
 			break;
 		case 12:
-			carattereDiControllo = 'M';
+			carattere = 'M';
 			break;
 		case 13:
-			carattereDiControllo = 'N';
+			carattere = 'N';
 			break;
 		case 14:
-			carattereDiControllo = 'O';
+			carattere = 'O';
 			break;
 		case 15:
-			carattereDiControllo = 'P';
+			carattere = 'P';
 			break;
 		case 16:
-			carattereDiControllo = 'Q';
+			carattere = 'Q';
 			break;
 		case 17:
-			carattereDiControllo = 'R';
+			carattere = 'R';
 			break;
 		case 18:
-			carattereDiControllo = 'S';
+			carattere = 'S';
 			break;
 		case 19:
-			carattereDiControllo = 'T';
+			carattere = 'T';
 			break;
 		case 20:
-			carattereDiControllo = 'U';
+			carattere = 'U';
 			break;
 		case 21:
-			carattereDiControllo = 'V';
+			carattere = 'V';
 			break;
 		case 22:
-			carattereDiControllo = 'W';
+			carattere = 'W';
 			break;
 		case 23:
-			carattereDiControllo = 'X';
+			carattere = 'X';
 			break;
 		case 24:
-			carattereDiControllo = 'Y';
+			carattere = 'Y';
 			break;
 		case 25:
-			carattereDiControllo = 'Z';
+			carattere = 'Z';
 			break;
 		}
+		return carattere;
 	}
 
-	public int tabellaDispari(StringBuffer dispari) {
+	public int tabellaPari(StringBuffer pari) {
 		int valoreTot = 0;
-		for (int i = 0; i < dispari.length(); i++) {
+		for (int i = 0; i < pari.length(); i++) {
 
-			switch (dispari.charAt(i)) {
-			case 0:
+			switch (pari.charAt(i)) {
+			case '0':
 				valoreTot += 0;
 				break;
-			case 1:
+			case '1':
 				valoreTot += 1;
 				break;
-			case 2:
+			case '2':
 				valoreTot += 2;
 				break;
-			case 3:
+			case '3':
 				valoreTot += 3;
 				break;
-			case 4:
+			case '4':
 				valoreTot += 4;
 				break;
-			case 5:
+			case '5':
 				valoreTot += 5;
 				break;
-			case 6:
+			case '6':
 				valoreTot += 6;
 				break;
-			case 7:
+			case '7':
 				valoreTot += 7;
 				break;
-			case 8:
+			case '8':
 				valoreTot += 8;
 				break;
-			case 9:
+			case '9':
 				valoreTot += 9;
 				break;
 			case 'A':
@@ -401,38 +403,38 @@ public class CodiceFiscale {
 		return valoreTot;
 	}
 
-	public int tabellaPari(StringBuffer pari) {
+	public int tabellaDispari(StringBuffer dispari) {
 		int valoreTot = 0;
-		for (int i = 0; i < pari.length(); i++) {
-			switch (pari.charAt(i)) {
-			case 0:
+		for (int i = 0; i < dispari.length(); i++) {
+			switch (dispari.charAt(i)) {
+			case '0':
 				valoreTot += 1;
 				break;
-			case 1:
+			case '1':
 				valoreTot += 0;
 				break;
-			case 2:
+			case '2':
 				valoreTot += 5;
 				break;
-			case 3:
+			case '3':
 				valoreTot += 7;
 				break;
-			case 4:
+			case '4':
 				valoreTot += 9;
 				break;
-			case 5:
+			case '5':
 				valoreTot += 13;
 				break;
-			case 6:
+			case '6':
 				valoreTot += 15;
 				break;
-			case 7:
+			case '7':
 				valoreTot += 17;
 				break;
-			case 8:
+			case '8':
 				valoreTot += 19;
 				break;
-			case 9:
+			case '9':
 				valoreTot += 21;
 				break;
 			case 'A':
