@@ -4,13 +4,15 @@ public class Comune {
 	private String nome_comune;
 	private String codice;
 
-	//costruttore che imposta solo il nome_comune (usato nella lettura del file inputPersone.xml)
-	public Comune(String nome_comune){
+	// costruttore che imposta solo il nome_comune (usato nella lettura del file
+	// inputPersone.xml)
+	public Comune(String nome_comune) {
 		this.nome_comune = nome_comune;
 	}
 
-	//costruttore che crea a null un Comune  (usato nella lettura del file comuni.xml)
-	public Comune(){
+	// costruttore che crea a null un Comune (usato nella lettura del file
+	// comuni.xml)
+	public Comune() {
 		this.nome_comune = "";
 		this.codice = "";
 	}

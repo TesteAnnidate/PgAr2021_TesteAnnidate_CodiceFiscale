@@ -17,6 +17,8 @@ public class Data {
 			d.append(0);
 		d.append(Data.ritornaNumeroMese(mese));
 		d.append("-");
+		if(giorno < 10)
+			d.append(0);
 		d.append(giorno);
 		return d.toString();
 	}
