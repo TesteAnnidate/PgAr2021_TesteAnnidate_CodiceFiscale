@@ -13,11 +13,6 @@ public class Input {
     //metodo statico che legge e ritorna un array di persone
     //MATILDE
 
-    /**
-     *
-     * @return
-     * @throws XMLStreamException
-     */
     public static ArrayList<Persona> leggiPersone() throws XMLStreamException {
 
         String file_name = "src/XMLFiles/inputPersone.xml";

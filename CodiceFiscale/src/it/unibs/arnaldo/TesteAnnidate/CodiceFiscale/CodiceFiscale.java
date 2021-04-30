@@ -17,7 +17,7 @@ public class CodiceFiscale {
 	private char carattereDiControllo;
 
 	// Meotodo che ritorna il codice fiscale intero
-	public StringBuffer codiceFiscaleIntero() {
+	public String codiceFiscaleIntero() {
 		StringBuffer cf = new StringBuffer();
 		cf.append(codiceCognome);
 		cf.append(codiceNome);
@@ -26,7 +26,7 @@ public class CodiceFiscale {
 		cf.append(codiceGiornoESesso);
 		cf.append(codiceComune);
 		cf.append(carattereDiControllo);
-		return cf;
+		return cf.toString();
 	}
 
 	// Costruttore data come parametro una persona

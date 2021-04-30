@@ -11,10 +11,6 @@ public class Main {
 	public static void main(String[] args) throws XMLStreamException {
 
 
-		// ArrayList<Persona> listaPersone = new ArrayList<Persona>();
-		// ArrayList<CodiceFiscale> listaCodici = new ArrayList<CodiceFiscale>();
-		
-
 		ArrayList<Persona> lista_persone = new ArrayList<Persona>();
 		ArrayList<CodiceFiscale> lista_codici = new ArrayList<CodiceFiscale>();
 		ArrayList<CodiceFiscale> lista_codici_da_persone = new ArrayList<CodiceFiscale>();
@@ -51,14 +47,13 @@ public class Main {
 			lista_codici_da_persone.add(codice_generato);
 		}
 
-		for(Persona persona: lista_persone){
+		/*for(Persona persona: lista_persone){
 			System.out.println(persona.getCf().codiceFiscaleIntero());
-		}
+		}*/
 
 		
-		
-
-
+		//creazione file di output
+		OutPut.creaXml(lista_persone, lista_codici);
 	}
 
 }
